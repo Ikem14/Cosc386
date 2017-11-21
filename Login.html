@@ -1,0 +1,96 @@
+<DOCTYPE html>
+<html>
+<head>
+  <title>I.T.C.H Corperation</title>
+  <link rel="stylesheet" type="text/css" href="page.css">
+  <h1>I.T.C.H Corperation</h1>
+  <h3>Login</h3>
+</head>
+<body>
+  <a style="color: white;" href="../Cosc386bd/Page1.html">HOME</a>
+  <style>
+  body{
+    background-image: url('../Cosc386bd/corvette.jpeg');
+    background-size: cover;
+  }
+  form {
+    /*border: 3px solid #f1f1f1;*/
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: black;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    color: white;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+  </style>
+  </head>
+  <body>
+    <h2 style="color:white; text-align: center">Admin Login</h2>
+
+    <form action="/action_page.php">
+
+      <div style="color:white; font-weight: bold;" class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <input type="checkbox" checked="checked"> Remember me
+      </div>
+
+      <div style="color:white; font-weight: bold;" class="container" >
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw"> <a style="color:white;" href="../Cosc386bd/forgot.html">Forgot password?</a></span>
+      </div>
+    </form>
+
+</body>
+</html>
