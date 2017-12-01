@@ -1,16 +1,19 @@
 
 h1,h3{
   text-align: center;
-  background: black;
+  background: #003F87;
   color: white;
+  padding: 5px;
 }
+h3{
+  text-align: center;
+}
+h4{
+  text-align: center;
+}
+
 
 
 body{
-  background-color: green
-}
-
-
-bottom{
-  color: white;
+  color: black
 }
