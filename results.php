@@ -34,32 +34,31 @@ button {
 <body>
   <a href="Page1.php"><button>HOME</button></a>
   <?php
-  if(isset($_POST["dealership"])) { $dealer = $_POST["dealership"];}
-  if(isset($_POST["make"])) { $make = $_POST["make"];}
-  if(isset($_POST["condition"])) { $condition = $_POST["condition"];}
-  if(isset($_POST["model"])) { $model = $_POST["model"];}
-  if(isset($_POST["year"])) { $year = $_POST["year"];}
-  $body=$_POST["body_type"];
-  if(isset($_POST["color"])) { $color = $_POST["color"];}
-  if(isset($_POST["price_from"])) { $priceF = $_POST["price_from"];}
-  if(isset($_POST["price_to"])) { $priceT = $_POST["price_to"];}
-  if(isset($_POST["min_mile"])) { $minM = $_POST["min_mile"];}
-  if(isset($_POST["max_mile"])) { $maxM = $_POST["max_mile"];}
-  $sql = "SELECT make, model, body, color, dealerAt FROM Vehicles where body like '%". mysql_real_escape_string($body) ."%";
-$result = $conn->query($sql);
-
+  $dealer = $_POST["dealership"];
+  $make = $_POST["make"];
+  $condition = $_POST["condition"];
+  $model = $_POST["model"];
+  $year = $_POST["year"];
+  $body=$_POST['body_type'];
+  $color = $_POST["color"];
+  $priceF = $_POST["price_from"];
+  $priceT = $_POST["price_to"];
+  $minM = $_POST["min_mile"];
+  $maxM = $_POST["max_mile"];
+  $sql = "SELECT make, model, body, color, dealerAt FROM Vehicles where body like '%$body%' and color and '%$color%'";
+  $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<table><tr><th>Make</th><th>Model</th><th>Body Type</th><th>Color</th><th>Dealership</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      //if($color == 'Red'){
-        echo "<tr><td>" . $row["make"]. "</td><td>" . $row["model"]."</td><td>" . $row["body"]. "</td><td>" . $row["color"]. "</td><td>" . $row["dealerAt"]. "</td></tr>";
+         echo "<tr><td>" . $row["make"]. "</td><td>" . $row["model"]."</td><td>" . $row["body"]. "</td><td>" . $row["color"]. "</td><td>" . $row["dealerAt"]. "</td></tr>";
       //}
     }
     echo "</table>";
 } else {
     echo "0 results";
 }
+
 
 $conn->close();
 ?>

@@ -52,7 +52,7 @@ else{
     <h4>
     <div id="select_box">
 		Dealership
-		<select id="dealership">
+		<select name="dealership">
 		 <option disabled selected value> -- select an option -- </option>
      <?php
         $select=$conn->query("SELECT name FROM Dealership");
@@ -65,7 +65,7 @@ else{
 	</h4>
   <h4>
    Make
-   <select id="make">
+   <select name="make">
     <option disabled selected value>  select an option </option>
     <?php
        $select=$conn->query("SELECT sellsNew FROM Dealership");
@@ -78,7 +78,7 @@ else{
  </h4>
 	<h4>
 		Condition
-		<select id="condition">
+		<select name="condition">
 		 <option selected value>New and Used Vehicles</option>
 			<option>New Vehicles</option>
 			<option>Used Vehicles</option>
@@ -88,7 +88,7 @@ else{
 
 	<h4>
 		Model
-		<select id="model">
+		<select name="model">
 		 <option disabled selected value> -- select an option -- </option>
      <?php
         $select=$conn->query("SELECT distinct model FROM Vehicles");
@@ -124,7 +124,7 @@ else{
 
 	<h4>
 		Body Type
-		<select id="body_type">
+		<select name="body_type">
 		 <option disabled selected value> -- select an option -- </option>
      <?php
         $select=$conn->query("SELECT distinct body FROM Vehicles");
@@ -137,7 +137,7 @@ else{
 	</h4>
 	<h4>
 		Color
-		<select id="color">
+		<select name="color">
 		 <option disabled selected value> -- select an option -- </option>
      <?php
         $select=$conn->query("SELECT distinct color FROM Vehicles");
@@ -151,7 +151,7 @@ else{
 
 	<h4>
 		Price  Range From
-		<select id="price_from">
+		<select name="price_from">
      <option selected value> $0 </option>
      <option> $10,000 </option>
      <option> $20,000 </option>
@@ -160,7 +160,7 @@ else{
      <option> $50,000 </option>
 		</select>
 		 To
-		<select id="price_to">
+		<select name="price_to">
        <option selected value> $10,000 </option>
        <option> $20,000 </option>
        <option> $30,000 </option>
@@ -172,7 +172,7 @@ else{
 
 	<h4>
 		Mileage Minimum
-		<select id="min_mile">
+		<select name="min_mile">
 		 <option selected value> 0 miles </option>
      <option> 10,000 miles </option>
      <option> 20,000 miles </option>
@@ -182,7 +182,7 @@ else{
      <option>  100,000 miles </option>
 		</select>
 		 Maximum
-		<select id="max_mile">
+		<select name="max_mile">
       <option selected value> 10,000 miles </option>
       <option> 20,000 miles </option>
       <option> 30,000 miles </option>
