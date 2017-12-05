@@ -34,24 +34,26 @@ button {
 <body>
   <a href="Page1.php"><button>HOME</button></a>
   <?php
-  $dealer = $_POST["dealership"];
-  $make = $_POST["make"];
-  $condition = $_POST["condition"];
-  $model = $_POST["model"];
-  $year = $_POST["year"];
+  $dealer = $_POST["dealership_t"];
+  $make = $_POST["make_t"];
+  $condition = $_POST["condition_t"];
+  $model = $_POST["model_t"];
+  $year = $_POST["year_t"];
   $body=$_POST['body_type'];
-  $color = $_POST["color"];
+  $color=$_POST['color_t'];
   $priceF = $_POST["price_from"];
   $priceT = $_POST["price_to"];
   $minM = $_POST["min_mile"];
   $maxM = $_POST["max_mile"];
-  $sql = "SELECT make, model, body, color, dealerAt FROM Vehicles where body like '%$body%' and color and '%$color%'";
+  $sql = "SELECT make, model, body, color, year, dealerAt FROM Vehicles where body like '%$body%' and color like '%$color%'
+  and make like '%$make%' and dealerAt like '%$dealer%' and model like '%$model%'and year like '%$year%'";
+
   $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>Make</th><th>Model</th><th>Body Type</th><th>Color</th><th>Dealership</th></tr>";
+    echo "<table><tr><th>Make</th><th>Model</th><th>Year</th><th>Body Type</th><th>Color</th><th>Dealership</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-         echo "<tr><td>" . $row["make"]. "</td><td>" . $row["model"]."</td><td>" . $row["body"]. "</td><td>" . $row["color"]. "</td><td>" . $row["dealerAt"]. "</td></tr>";
+         echo "<tr><td>" . $row["make"]. "</td><td>" . $row["model"]."</td><td>" . $row["year"]."</td><td>" . $row["body"]. "</td><td>" . $row["color"]. "</td><td>" . $row["dealerAt"]. "</td></tr>";
       //}
     }
     echo "</table>";

@@ -52,7 +52,7 @@ else{
     <h4>
     <div id="select_box">
 		Dealership
-		<select name="dealership">
+		<select name="dealership_t">
 		 <option disabled selected value> -- select an option -- </option>
      <?php
         $select=$conn->query("SELECT name FROM Dealership");
@@ -65,7 +65,7 @@ else{
 	</h4>
   <h4>
    Make
-   <select name="make">
+   <select name="make_t">
     <option disabled selected value>  select an option </option>
     <?php
        $select=$conn->query("SELECT sellsNew FROM Dealership");
@@ -78,7 +78,7 @@ else{
  </h4>
 	<h4>
 		Condition
-		<select name="condition">
+		<select name="condition_t">
 		 <option selected value>New and Used Vehicles</option>
 			<option>New Vehicles</option>
 			<option>Used Vehicles</option>
@@ -88,7 +88,7 @@ else{
 
 	<h4>
 		Model
-		<select name="model">
+		<select name="model_t">
 		 <option disabled selected value> -- select an option -- </option>
      <?php
         $select=$conn->query("SELECT distinct model FROM Vehicles");
@@ -110,7 +110,7 @@ else{
     }
     var date = year+2; /*change the '101' to the number of years in the past you want to show */
     var past = year - 49; /*change the '100' to the number of years in the future you want to show */
-    document.writeln ("Year<SELECT id='year'><OPTION disabled selected value=\"\">-- Select Year --");
+    document.writeln ("Year<SELECT name='year_t'><OPTION disabled selected value=\"\">-- Select Year --");
     do {
     date--;
     document.write ("<OPTION value=\"" +date+"\">" +date+ "");
@@ -137,7 +137,7 @@ else{
 	</h4>
 	<h4>
 		Color
-		<select name="color">
+		<select name="color_t">
 		 <option disabled selected value> -- select an option -- </option>
      <?php
         $select=$conn->query("SELECT distinct color FROM Vehicles");
