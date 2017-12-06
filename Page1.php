@@ -12,9 +12,6 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn){
     echo("Connection failed: " . mysqli_connect_error());
 }
-else{
-  echo "Connected successfully";
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +50,7 @@ else{
     <div id="select_box">
 		Dealership
 		<select name="dealership_t">
-		 <option disabled selected value> -- select an option -- </option>
+		 <option selected value> All Dealerships </option>
      <?php
         $select=$conn->query("SELECT name FROM Dealership");
         while($row=$select->fetch_array())
@@ -66,7 +63,7 @@ else{
   <h4>
    Make
    <select name="make_t">
-    <option disabled selected value>  select an option </option>
+    <option selected value>  All Makes </option>
     <?php
        $select=$conn->query("SELECT sellsNew FROM Dealership");
        while($row=$select->fetch_array())
@@ -89,7 +86,7 @@ else{
 	<h4>
 		Model
 		<select name="model_t">
-		 <option disabled selected value> -- select an option -- </option>
+		 <option selected value> All Models </option>
      <?php
         $select=$conn->query("SELECT distinct model FROM Vehicles");
         while($row=$select->fetch_array())
@@ -110,7 +107,7 @@ else{
     }
     var date = year+2; /*change the '101' to the number of years in the past you want to show */
     var past = year - 49; /*change the '100' to the number of years in the future you want to show */
-    document.writeln ("Year<SELECT name='year_t'><OPTION disabled selected value=\"\">-- Select Year --");
+    document.writeln ("Year<SELECT name='year_t'><OPTION selected value=\"\">All Years");
     do {
     date--;
     document.write ("<OPTION value=\"" +date+"\">" +date+ "");
@@ -125,7 +122,7 @@ else{
 	<h4>
 		Body Type
 		<select name="body_type">
-		 <option disabled selected value> -- select an option -- </option>
+		 <option selected value> All Body types </option>
      <?php
         $select=$conn->query("SELECT distinct body FROM Vehicles");
         while($row=$select->fetch_array())
@@ -138,7 +135,7 @@ else{
 	<h4>
 		Color
 		<select name="color_t">
-		 <option disabled selected value> -- select an option -- </option>
+		 <option selected value>All Colors</option>
      <?php
         $select=$conn->query("SELECT distinct color FROM Vehicles");
         while($row=$select->fetch_array())
@@ -150,45 +147,45 @@ else{
 	</h4>
 
 	<h4>
-		Price  Range From
+		Price  Range From $
 		<select name="price_from">
-     <option selected value> $0 </option>
-     <option> $10,000 </option>
-     <option> $20,000 </option>
-     <option> $30,000 </option>
-     <option> $40,000 </option>
-     <option> $50,000 </option>
+     <option selected value> 0 </option>
+     <option> 10,000 </option>
+     <option> 20,000 </option>
+     <option> 30,000 </option>
+     <option> 40,000 </option>
+     <option> 50,000 </option>
 		</select>
-		 To
+		 To $
 		<select name="price_to">
-       <option selected value> $10,000 </option>
-       <option> $20,000 </option>
-       <option> $30,000 </option>
-       <option> $40,000 </option>
-       <option> $50,000 </option>
-       <option> over $100,000 </option>
+       <option selected value> 10,000 </option>
+       <option> 20,000 </option>
+       <option> 30,000 </option>
+       <option> 40,000 </option>
+       <option> 50,000 </option>
+       <option> over 100,000 </option>
 		</select>
 	</h4>
 
 	<h4>
-		Mileage Minimum
+		Mileage Minimum (miles)
 		<select name="min_mile">
-		 <option selected value> 0 miles </option>
-     <option> 10,000 miles </option>
-     <option> 20,000 miles </option>
-     <option> 30,000 miles </option>
-     <option> 40,000 miles </option>
-     <option>  50,000 miles </option>
-     <option>  100,000 miles </option>
+		 <option selected value> 0 </option>
+     <option> 10,000 </option>
+     <option> 20,000 </option>
+     <option> 30,000 </option>
+     <option> 40,000 </option>
+     <option> 50,000 </option>
+     <option> 100,000 </option>
 		</select>
-		 Maximum
+		 Maximum (miles)
 		<select name="max_mile">
-      <option selected value> 10,000 miles </option>
-      <option> 20,000 miles </option>
-      <option> 30,000 miles </option>
-      <option> 40,000 miles </option>
-      <option>  50,000 miles </option>
-      <option>  over 100,000 miles </option>
+      <option selected value> 10,000 </option>
+      <option> 20,000 </option>
+      <option> 30,000 </option>
+      <option> 40,000 </option>
+      <option>  50,000 </option>
+      <option>  over 100,000 </option>
 		</select>
     </div>
     <br></br>
